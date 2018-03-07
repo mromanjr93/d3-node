@@ -16,7 +16,8 @@ export class PostController {
 
     getAll = (req: Request, res: Response) => {
         const filter = req.query;
-        return res.json(this.postAppService.getAll(filter))
+        this.postAppService.getAll(filter)
+            .subscribe(response => res.json(response));        
     }
 }
 
