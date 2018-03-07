@@ -25,7 +25,16 @@ export class PostAppService implements PostAppServiceAbstract {
         return this.postService
                     .getAll(filter)
                     .map(value => {
-                        return value;
+                        let postDto = new Array<PostDto>();
+                        
+                        value.forEach(v => {
+                            postDto.push({
+                                postId : v.postId,
+                                title: v.title,
+                                content : v.content
+                            });
+                        })
+                        return postDto;
                     });                
     }
 }

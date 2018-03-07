@@ -1,7 +1,7 @@
 import { PostServiceAbstract } from "./abstract/post-service.abstract";
 import { injectable, inject } from "inversify";
 import { TYPES } from "../cross-cutting/ioc/types";
-import { PostRepositoryDefinition } from "../domain/repositories/post-repository.definition";
+import { PostRepositoryAbstract } from "../domain/repositories/post-repository.abstract";
 import { Observable } from "rxjs/Observable";
 import { Post } from "../domain/entities/post.domain";
 import { PostFilter } from "../domain/filters/post-filter.domain";
@@ -10,7 +10,7 @@ import { PostFilter } from "../domain/filters/post-filter.domain";
 export class PostService implements PostServiceAbstract {
 
     constructor(
-        @inject(TYPES.PostRepositoryDefinition) private postRepository: PostRepositoryDefinition
+        @inject(TYPES.PostRepositoryAbstract) private postRepository: PostRepositoryAbstract
     ) {
 
     }

@@ -1,5 +1,18 @@
 version: "3.3"
 services:
+
+  blog-db:
+    build: ./src/app/infrastructure/database
+    container_name: blog-db    
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=mromandba
+      - POSTGRES_PASSWORD=qawsed      
+    healthcheck:
+      test: exit 0  
+
+
   api:
     build: .
     container_name: api
@@ -8,3 +21,11 @@ services:
     volumes:
       - ".:/home/app"
       - "/home/app/node_modules"
+    environment:
+      - DATABASE_URL=postgres://mromandba:qawsed@blog-db:5432/blog_db_dev
+      - DATABASE_TEST_URL=postgres://mromandba:qawsed@blog-db:5432/blog_db_test
+      - PORT=3000
+      - NODE_ENV=development
+      - TOKEN_SECRET=qawsed  
+    depends_on:
+      - blog-db

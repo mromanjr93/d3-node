@@ -1,7 +1,7 @@
 const TYPES = {
     PostAppServiceAbstract: Symbol.for("PostAppServiceAbstract"),    
     PostServiceAbstract: Symbol.for("PostServiceAbstract"),    
-    PostRepositoryDefinition: Symbol.for("PostRepositoryDefinition"),    
+    PostRepositoryAbstract: Symbol.for("PostRepositoryAbstract"),    
 };
 
 export { TYPES };
