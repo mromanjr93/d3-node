@@ -1,0 +1,26 @@
+{
+  "name": "d3-node",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon  --legacy-watch --config=nodemon.json"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "http-status": "^1.0.1",
+    "inversify": "^4.11.1",
+    "lodash": "^4.17.5",
+    "morgan": "^1.9.0",
+    "reflect-metadata": "^0.1.12"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/http-status": "^0.2.30",
+    "@types/node": "^9.4.6",
+    "nodemon": "^1.17.1",
+    "ts-node": "~4.1.0",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3"
+  }
+}
